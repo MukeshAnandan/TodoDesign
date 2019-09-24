@@ -1,0 +1,244 @@
+@font-face {
+    font-family:segoe-semibold;
+    src: url("segoe/seguisb.ttf");
+}
+@font-face {
+    font-family:segoe-regular;
+    src: url("segoe/segoe-regular.ttf");
+}
+.header {
+    background-color:#0E7BD8;
+    padding: 7px 6px;
+    color: white;
+    text-align: left;
+    margin: 0px;
+    width: :90%;
+}
+
+.headertext {
+    font-family:segoe-semibold;
+    margin:5px;
+    font-size:16px;
+}    
+body {
+    margin: 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenav {
+    font-family:segoe-regular;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    padding:0 0 10px;
+    z-index: 1;
+    top: 45px;
+    left: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenavicons{
+    font-family:segoe-regular;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    padding:0 0 10px;
+    z-index: 1;
+    top: 45px;
+    left: 0;
+    background-color: #f7f7f7;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.sidenav a {
+  padding: 6px 8px 1px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #393737;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #0E7BD8;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+.addList {
+    margin: 22px;
+    background-color: #ffffff;
+    border: none;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    width: 60%;
+    height: 4%;
+    margin-left: 1%;
+}
+
+.addList a {
+  padding: 6px 8px 1px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #393737;
+  display: block;
+}
+a {
+    font-size: 20px; 
+}
+
+.mylist {
+    margin-top: 12%;
+}
+.newlist {
+   margin-top: 0%;
+}
+.addSubNotes {
+    margin: 0px;
+    margin-left: 0px;
+    background-color: #ffffff;
+    border: none;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    width: 96%;
+    height: 15%;
+    margin-left: 1%;
+}
+.Remaining {
+    height: 94%;
+    background-color: #fff;;
+    margin-left: 19.4%;
+    padding-top: 1px;
+
+}
+.sidecontent {
+    margin-top:10%;
+}
+.myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid black;
+  font-size: 18px;
+}
+td {
+  width : 100%;
+}
+
+.details {
+    height: 100%;
+    width: 325px;
+    position: fixed;
+    padding: 0 0 10px;
+    padding-top: 0px;
+    z-index: 1;
+    top: 45px;
+    left: 75%;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sun {
+    content:url("sun.png");
+}
+.star {
+    content:url("star.svg");
+}
+.calender {
+    content:url("calender.png");
+}
+.person {
+    content:url("custom.png");
+}
+.home {
+    content:url("home.svg");
+}
+.alarm {
+    content:url("alarm.png");
+}
+.repeat {
+    content:url("repeat.png");
+}
+.addFile {
+    content:url("fileattach.png");
+}
+.iconsize {
+    width:6%;
+    height:2%;
+}    
+
+.hide {
+	display: none;
+}
+.listicon {
+    content:url("listing.png");
+}
+.plus {
+    content:url("plus.png");
+}
+
+
+.info {
+    cursor: pointer;
+}
+
+.todolist {
+    width: 100%;
+}
+
+.tasktitle {
+    font-size: 1.5rem;
+    margin: 3% 0 0 3%;
+    color: #1579CE;
+    font-family: sans-serif;
+}
+
+.newtask {
+    color: #1579CE;
+    margin: 2% 0 0 3%;
+    display: flex;
+    padding-bottom: 1%;
+    border-color: #50504cfa;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+}
+
+.newtaskicon {
+    margin-top: 30%;
+    color: #1579CE;
+    text-decoration: none;
+}
+
+.addtask{
+    width: 100%;
+    padding: 1%;
+    font-size: 1rem;
+    margin: 0 0 0 1%;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.addlists {
+    margin-top: 15%;  
+}
+.taskAttributes {
+    font-size: 1.5rem;
+    margin: 3% 0 0 3%;
+    color: #1579CE;
+    font-family: sans-serif;
+}
+
