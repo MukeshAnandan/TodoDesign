@@ -46,12 +46,12 @@
      
         <div id="todo-list" class="todolist">
                     <div id="info"  class="info"><span class="tasktitle">Tasks..</span></div></a>
-                    <div id ="newTaskDef" class ="newtaskDetail "> 
+                    <div id ="newTaskDef" class ="newtaskDetail" > 
                     </div>
                     <div class="newtask">
                         <span class ="plus"></span>
                         <input id="add-new-task" class="addtask" type="text" 
-                            placeholder="Add task"/>   
+                            placeholder="Add task" />   
                     </div>
                                   
         </div>
@@ -61,33 +61,58 @@
     
     
     
-    <div class = "details sidenav">
-        <p><input type="checkbox"/> <span class = "taskAttributes" id ="subTitle">Tasks..</span></p>
-      <div class = "sidecontent" >
-      <div class = "sidecontent">
-      <a href="#"><i class = "iconsize plus"></i>&nbsp; Add Steps</a>
-      </div>
+<div id="mysubbar" class = "details sidepanel">
+      <div class ="subNotes1"> 
+      <div class ="round">
+            <p><input id="checkbox" type="checkbox"/> 
+            <label for="checkbox"></label> 
+            <input class = "taskAttributes addList" id ="subTitle" value ="Tasks.."/>
+            </p>
+      </div>   
+        <div class = "sidecontent">
+                  <div id ="subNotes" class ="subnotes"> 
+                  </div>
+                  <div class="newNotes">
+                  <span class ="plus"></span>
+                  <input id="addSubNotes" class="addsubnotes" type="text" 
+                   placeholder="Next step"/>   
+                  </div>
+          </div>
+      </div>    
+      
+      <div class = "sidecontent subNotes2" >
       <a href="#"><i class = "iconsize sun"></i> &nbsp;Add To My Day</a>
       </div>
-      <div class = "sidecontent">
-      <a href="#"><i class = "iconsize alarm"></i>&nbsp; Remaind me</a>
+      
+      <div class ="subNotes3">
+          <div class = "sidecontent">
+          <a href="#"><i class = "iconsize alarm"></i>&nbsp; Remaind me</a>
+          </div>
+          <div class = "sidecontent">
+          <a href="#"><i class = "iconsize calender"></i>&nbsp;Add due date</a>
+          </div>
+          <div class = "sidecontent">
+          <a href="#"><i class = "iconsize repeat"></i>&nbsp;Repeat</a>
+          </div>
       </div>
-      <div class = "sidecontent">
-      <a href="#"><i class = "iconsize calender"></i>&nbsp;Add due date</a>
-      </div>
-      <div class = "sidecontent">
-      <a href="#"><i class = "iconsize repeat"></i>&nbsp;Repeat</a>
-      </div>
-      <div class = "sidecontent">
+      
+      <div class = "sidecontent subNotes4">
       <a href="#"><i class = "iconsize addFile"></i>&nbsp;Add file</a>
       </div>
-      <div class = "sidecontent newlist ">
+      
+      <div class = "sidecontent newlist subNotes5">
       <input  id = "taskinput" class="addSubNotes" type="text" placeholder= "Add Notes"/> 
       </div>
-    
+      
+      
+      <div class = "sidecontent subNotes6" >
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      </div>
     </div>  
     
+    
 </div>  
+    
     
     
     
