@@ -8,12 +8,13 @@ function closeNav() {
 
 var lists = [];
 var listname;
+var taskId =0;
 var listid = 0;
 var notesname;
+var subnotesname;
 var notesid = 0;
 var divId = 1;
 var subDivId = 1;
-var notesname;
 var notesid=0;
 var strikedNote = [];
 var strikeName;
@@ -73,13 +74,14 @@ function switchCurrentNotes(listid) {
   var oldnote = {};
   var notesname;
   var oldtasks = list.tasks;
-   for(i = 0;i <= oldtasks.length; i++) {
+   for(i = 0;i <= oldtasks.length-1; i++) {
         var taskName = document.createElement("span");
         var taskDiv = document.createElement("div");
         taskDiv.id = divisionId++;
         console.log(taskDiv.id);
         var taskList = document.getElementById("newTaskDef");
-        /*if(strikedNote[i].strikeName === oldtasks[i].notesname && strikedNote[i].strikeID == taskDiv.id) {
+        /*if(strikedNote[i].strikeName === oldtasks[i].notesname && 
+            strikedNote[i].strikeID == taskDiv.id) {
         
             console.log("ifffffffffff");
             var ele = document.getElementById(taskDiv.id);
@@ -96,6 +98,8 @@ function switchCurrentNotes(listid) {
         taskList.appendChild(taskDiv);
         console.log("end....................");
         taskName.addEventListener("click",getNotesTitle.bind(oldtasks[i]));
+        taskName.addEventListener("click",changeName.bind(oldtasks[i]));
+        
         
         
         
@@ -126,6 +130,7 @@ function addNote() {
     console.log(lists[listid]);
     var notes = {};
     notes.subnote = [];
+    notes.additionalNote = "";
     var taskName = document.createElement("span");
     var taskDiv = document.createElement("div");
     taskDiv.id = divId++;
@@ -141,12 +146,14 @@ function addNote() {
     taskDiv.appendChild(taskName);
     taskList.appendChild(taskDiv);
     newtaskInfo.value ="";
+    notes.notesid = list.tasks.length;
     list.tasks.push(notes);
-    notes.notesid = lists.length - 1;
+    console.log("notesID incr"+notes.notesid);
     //createStep();
     taskName.addEventListener("click",getNotesTitle.bind(notes));
+    taskName.addEventListener("click",changeName.bind(notes));
     input.addEventListener("click", strikeFunction.bind(taskDiv));
-    taskDiv.addEventListener("click",getTask.bind(notes));
+    //taskDiv.addEventListener("click",getTask.bind(notes));
 } 
 
 
@@ -164,15 +171,18 @@ function createSubNote(e) {
 }
 
 function subNote() {
-    var list =  lists[listid];
-    console.log(lists[listid]);
+    console.log("taskId"+taskId)
+    var list = lists[listid];
+    var note = list.tasks[taskId];
+    
+    console.log(list.tasks[taskId]);
     var subnotes = {};
     var taskName = document.createElement("span");
     var notesDiv = document.createElement("div");
     notesDiv.id = subDivId++;
     notesDiv.name = newSubNotes.value;
     var newTaskInfo = newSubNotes.value;
-    subnotes.notesname = newSubNotes.value;
+    subnotes.subnotesname = newSubNotes.value;
     var taskList = document.getElementById("subNotes");
     taskName.innerHTML = newSubNotes.value;
     var inputType = document.createElement("INPUT");
@@ -182,37 +192,119 @@ function subNote() {
     notesDiv.appendChild(taskName);
     taskList.appendChild(notesDiv);
     newSubNotes.value ="";
-    list.subnote.push(subnotes);
+    console.log("before push");
+    note.subnote.push(subnotes);
+    console.log("after push");
+    console.log(lists[listid].tasks);
     inputType.addEventListener("click", strikeFunction.bind(notesDiv));
 } 
 
+var additionalNotes= document.getElementById("additional");
+additionalNotes.addEventListener("keyup", additionalNoteForm);
+
+function additionalNoteForm(e) {
+    if(e.keyCode == 13 && additionalNotes.value != "") {
+        console.log("aDD 1");
+        additionalSubNotes();
+    }
+} 
+
+function additionalSubNotes() {
+    console.log("aDD 2");
+    var list = lists[listid];
+    var note = list.tasks[taskId];
+    note.additionalNote = additionalNotes.value;
+    console.log("aDD  END");
+
+}
 
 
-var subTitleInput = document.getElementById("subTitle");
+
+
 
 function getNotesTitle() {
-    openNav();
-    taskAttributes.value = this.notesname;
-    
-    subTitleInput.addEventListener("keyup", editNoteName);
-    function editNoteName(e) {
-        console.log("CREATE NEW");
-        if(e.keyCode == 13 && newtask.value != "") {
-            changeNoteName();
-        }
-    }
-    function changeNoteName() {
-        var list =  lists[listid];
-        var oldtasks = list.tasks;
-        for(i = 0;i <= oldtasks.length; i++) {
-            if(oldtasks[i].notesname == this.notesname) {
-                oldtasks[i].notesname = subTitleInput.value;
-            }
-            
-        }    
-    
 
-    }
+    console.log("notes id"+this.notesid);
+    openNav();
+    taskId = this.notesid;
+    taskAttributes.value = this.notesname;
+    document.getElementById("subNotes").innerHTML = "";
+    document.getElementById("additional").value = "";
+    
+    viewCurrentsubNotes(taskId);
+    viewAdditionalNotes(taskId);
+    console.log("tommy");
+    
+}
+
+function changeName() {
+    console.log("tommy son");
+    taskId = this.notesid;
+    taskAttributes.value = this.notesname;
+    var localname = this.notesid;
+    var subTitleInput = document.getElementById("subTitle");
+    subTitleInput.addEventListener("keyup", editNoteName);
+        function editNoteName(e) {
+            console.log("CREATE NEW name updated");
+            if(e.keyCode == 13 && subTitleInput.value != "") {
+                changeNoteName();
+            }
+        }
+        function changeNoteName() {
+            console.log("tommy in");
+            var list =  lists[listid];
+            var oldtasks = list.tasks;
+         loop: for(i = 0;i <= oldtasks.length-1; i++) {
+                    console.log("tommy for");
+                    console.log(localname);
+                    console.log(oldtasks[i].notesid);
+                if(oldtasks[i].notesid == localname) {
+                    console.log("tommy if");
+                    oldtasks[i].notesname = subTitleInput.value;
+                    document.getElementById("newTaskDef").innerHTML = "";
+                    break loop;
+                }
+                
+            }  
+            switchCurrentNotes(listid);
+            localname = "";  
+        
+
+        }
+}    
+
+function viewAdditionalNotes(taskId) {
+  var list = lists[listid];
+  var note = list.tasks[taskId];
+  var additionaltext = note.additionalNote;
+  var add_text = document.getElementById("additional");
+  add_text.value = additionaltext;
+}
+
+function viewCurrentsubNotes(taskId) {
+  console.log(taskId);
+  var list = lists[listid];
+  var note = list.tasks[taskId];
+  var divisionId =1;
+  var oldsubnotes = note.subnote;
+  var additionaltext = note.additionalNote;
+  
+   for(i = 0;i <= oldsubnotes.length-1; i++) {
+    var taskName = document.createElement("span");
+    var notesDiv = document.createElement("div");
+    notesDiv.id = divisionId++;
+    var taskList = document.getElementById("subNotes");
+    console.log(oldsubnotes[i]);
+    taskName.innerHTML = oldsubnotes[i].subnotesname ;
+    var inputType = document.createElement("INPUT");
+    inputType.type = "checkbox";
+    notesDiv.className = "newNotes";
+    notesDiv.appendChild(inputType);
+    notesDiv.appendChild(taskName);
+    taskList.appendChild(notesDiv);
+    
+    inputType.addEventListener("click", strikeFunction.bind(notesDiv));  
+   }
 
 }
 
@@ -240,8 +332,7 @@ function createStep() {
     addSteps.appendChild(input);   
 }
 
-var closeinfo = document.getElementById("close");
-closeinfo.addEventListener("click", closeNav());
+
 
 
 
