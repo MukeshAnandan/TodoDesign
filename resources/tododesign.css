@@ -12,7 +12,7 @@
     color: white;
     text-align: left;
     margin: 0px;
-    width: :90%;
+    width: 90%;
 }
 
 .headertext {
@@ -161,6 +161,7 @@ a {
     background-color: #fff;;
     margin-left: 19.4%;
     padding-top: 1px;
+    overflow: scroll;
 
 }
 .sidecontent {
@@ -187,7 +188,7 @@ td {
     left: 75%;
     background-color: #f4f4f4;
     padding-top: 20px;
-    overflow-x: scroll;
+    overflow: scroll;
 }
 
 .sun {
@@ -223,13 +224,19 @@ td {
 	display: none;
 }
 .listicon {
+    color: #1579CE;
+    height: 5%;
     content:url("listing.png");
 }
 .plus {
     content:url("plus.png");
 }
-
-
+.noteicon {
+    content:url("note.png");
+    height: 4%;
+    width: 2%;
+    
+}
 .info {
     cursor: pointer;
 }
@@ -247,12 +254,24 @@ td {
 
 .newtask {
     color: #1579CE;
-    margin: 2% 0 0 3%;
+    margin: 1% 0 0 2%;
     display: flex;
-    padding-bottom: 1%;
-    border-color: #50504cfa;
+    padding-bottom: 0%;
+    border-color: #d8d8d2fa;
     border-bottom-style: solid;
     border-bottom-width: thin;
+    margin-bottom: 10px;
+}
+
+.countDiv {
+}
+.taskNameSpan{
+    width:0px;
+}
+.taskPointer {
+    color: #1579CE;
+    cursor:pointer;
+    margin: 5%;
 }
 
 .newtaskicon {
@@ -272,7 +291,9 @@ td {
 }
 
 .addlists {
-    margin-top: 15%;  
+    margin-top: 4%;
+    height: 30%;
+    overflow: scroll; 
     
 }
 .taskAttributes {
@@ -403,9 +424,14 @@ body {
     margin: 2% 0 0 3%;
     display: flex;
     padding-bottom: 1%;
-    border-color: #50504cfa;
+    border-color: #d8d8d2fa;
     border-bottom-style: solid;
     border-bottom-width: thin;
 
 }
+
+input[type=checkbox]:checked {
+  color:red;
+  text-decoration: line-through;
+} 
 
