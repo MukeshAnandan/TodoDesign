@@ -2,8 +2,10 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { Sidebar} from './sidebar/sidebar.component';
+import { HeaderComponent } from './header/header.component';
+import { TaskComponent } from './task/task.component';
 
-describe('AppComponent', () => {
+describe('AppComponent', () => {111
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -11,7 +13,8 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        Sidebar
+        Sidebar,
+        HeaderComponent
       ],
     }).compileComponents();
   }));

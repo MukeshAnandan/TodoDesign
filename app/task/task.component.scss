@@ -6,84 +6,6 @@
     font-family:segoe-regular;
     src: url("../../assets/segoe/segoe-regular.ttf");
 } 
-body {
-    margin: 0px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.sidepanel  {
-    font-family:segoe-regular;
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    padding:0 0 10px;
-    z-index: 1;
-    top: 45px;
-    left: 0;
-    background-color: #f4f4f4;
-    overflow-x: scroll;
-    padding-top: 20px;  
-}
-
-.sidepanel a {
-  padding: 6px 8px 1px 16px;
-  text-decoration: none;
-  font-size: 16px;
-  color: #393737;
-  display: block;
-}
-
-.sidepanel a:hover {
-  color: #0E7BD8;
-}
-.sidepanel .closebtn {
-    position: absolute;
-    top: 85%;
-    right: 90%;
-    font-size: 25px;
-}
-
-
-.sidenav {
-    font-family:segoe-regular;
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    padding:0 0 10px;
-    z-index: 1;
-    top: 45px;
-    left: 0;
-    background-color: #f4f4f4;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-.sidenavicons{
-    font-family:segoe-regular;
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    padding:0 0 10px;
-    z-index: 1;
-    top: 45px;
-    left: 0;
-    background-color: #f7f7f7;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-.sidenav a {
-  padding: 6px 8px 1px 16px;
-  text-decoration: none;
-  font-size: 16px;
-  color: #393737;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #0E7BD8;
-}
 
 .main {
   margin-left: 160px; /* Same as the width of the sidenav */
@@ -91,33 +13,6 @@ body {
   padding: 0px 10px;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-
-.addList {
-    margin: 22px;
-    background-color: #ffffff;
-    border: none;
-    opacity: 0.6;
-    filter: alpha(opacity=60);
-    width: 60%;
-    height: 4%;
-    margin-left: 1%;
-    border: none;
-    outline: none;
-    background: transparent;
-}
-
-.addList a {
-  padding: 6px 8px 1px 16px;
-  text-decoration: none;
-  font-size: 16px;
-  color: #393737;
-  display: block;
-}
 a {
     font-size: 20px; 
 }
@@ -127,40 +22,6 @@ a {
 }
 .newlist {
    margin-top: 0%;
-}
-.addSubNotes {
-    margin: 0px;
-    margin-left: 0px;
-    background-color: #ffffff;
-    border: none;
-    opacity: 0.6;
-    filter: alpha(opacity=60);
-    width: 96%;
-    height: 15%;
-    margin-left: 1%;
-    border: none;
-    outline: none;
-    background: transparent;
-}
-.Remaining {
-    height: 94%;
-    background-color: #fff;;
-    margin-left: 19.4%;
-    padding-top: 1px;
-    overflow: scroll;
-
-}
-.sidecontent {
-    margin-top:10%;
-}
-.myTable {
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid black;
-  font-size: 18px;
-}
-td {
-  width : 100%;
 }
 
 .details {
@@ -216,6 +77,7 @@ td {
 }
 .plus {
     content:url("../../assets/icons/plus.png");
+    margin-left: 30%;
 }
 .noteicon {
     content:url("../../assets/icons/note.png");
@@ -237,7 +99,9 @@ td {
     color: #1579CE;
     font-family: sans-serif;
 }
-
+.newtaskDetail {
+   margin-left: 20%;
+}
 .newtask {
     color: #1579CE;
     margin: 1% 0 0 2%;
@@ -249,6 +113,8 @@ td {
     margin-bottom: 10px;
 }
 
+.countDiv {
+}
 .taskNameSpan{
     width:0px;
 }
@@ -286,55 +152,6 @@ td {
     color: #1579CE;
     font-family: sans-serif;
 }
-
-
-.subNotes1 {
-    margin: 5%;
-    padding: 3%;
-    padding-left: 1%;
-    background: #ffffff;
-    width: 85%;
-    margin-top: auto;
-}
-.subNotes2{
-    margin: 5%;
-    padding: 3%;
-    padding-left: 1%;
-    background: #ffffff;
-    width: 85%;
-}
-.subNotes3{
-    margin: 5%;
-    padding: 3%;
-    padding-left: 1%;
-    background: #ffffff;
-    width: 85%;
-
-}
-.subNotes4{
-    margin: 5%;
-    padding: 3%;
-    padding-left: 1%;
-    background: #ffffff;
-    width: 85%;
-
-}
-.subNotes5{
-    margin: 5%;
-    padding: 1%;
-    padding-left: 0%;
-    background: #ffffff;
-    width: 88%;
-
-}
-
-.subNotes6{
-    margin: 4%;
-    padding: 0%;
-    padding-left: 1%;
-    width: 85%;
-}
-
 
 .round {
   position: relative;
@@ -394,25 +211,7 @@ body {
       top: 25px;
       width: 28px;
 }
-.addsubnotes{
-    width: 100%;
-    padding: 1%;
-    font-size: 1rem;
-    margin: 0 0 0 1%;
-    border: none;
-    outline: none;
-    background: transparent;
-}
-.newNotes{
-    color: #1579CE;
-    margin: 2% 0 0 3%;
-    display: flex;
-    padding-bottom: 1%;
-    border-color: #d8d8d2fa;
-    border-bottom-style: solid;
-    border-bottom-width: thin;
 
-}
 
 input[type=checkbox]:checked {
   color:red;

@@ -16,11 +16,20 @@
     </div>
     
     
-    <div id ="taskList" class ="addlists">
+    <div id ="taskList" class ="addlists"  >
+        <div class ="taskPointer"  *ngFor = "let list of lists" (click) = 'getTitle(list)'>
+            <i class="iconsize listicon"></i>
+            <span> {{list.name}} </span>
+        </div>
+        
     </div>
     
     <div class = newlist >
-    <span class ="iconsize plus"></span><input  id = "taskinput" class="addList" type="text" placeholder= "New List"/> 
+    <span class ="iconsize plus"></span><input  id = "taskinput" (keyup)='addList($event)' class="addList" type="text" placeholder= "New List"/> 
     </div>
  
 </div>  
+
+<div id="todo-list" class="todolist">
+    <task [list]="currentList"></task>
+</div>
