@@ -19,6 +19,7 @@ export class TaskComponent {
         isFinished:false
       }
       this.list.tasks[this.taskCount] = task;
+      Event.target.value ="";
     }
   }
 
@@ -32,6 +33,12 @@ export class TaskComponent {
     if(Event.keyCode === 13) {
       this.list.name = Event.target.value
     }
+  }
+
+  changeCheckboxStatus(task) {
+    task.isFinished = !task.isFinished;
+    this.list.tasks[task.id] = task;
+    console.log(this.list.tasks[task.id])
   }
 
 }

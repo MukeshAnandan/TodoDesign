@@ -5,7 +5,7 @@
     position: fixed;
     padding:0 0 10px;
     z-index: 1;
-    top: 45px;
+    top: 53px;
     left: 0;
     background-color: #f4f4f4;
     overflow-x: scroll;
@@ -42,7 +42,7 @@
 }
 
 
-.addList {
+.addList ,.lineThrough {
     margin: 22px;
     background-color: #ffffff;
     border: none;
@@ -115,7 +115,7 @@ td {
     padding: 0 0 10px;
     padding-top: 0px;
     z-index: 1;
-    top: 45px;
+    top: 53px;
     left: 75%;
     background-color: #f4f4f4;
     padding-top: 20px;
@@ -228,11 +228,17 @@ td {
     overflow: scroll; 
     
 }
-.taskAttributes {
+.taskAttributes, .lineThrough  {
     font-size: 1.5rem;
     margin: 3% 0 0 8%;
     color: #1579CE;
     font-family: sans-serif;
+}
+.lineThrough {
+    text-decoration: line-through;
+}
+.disableLineThrough {
+    text-decoration: none;
 }
 
 

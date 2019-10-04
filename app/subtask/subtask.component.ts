@@ -18,18 +18,27 @@ export class SubtaskComponent {
         isFinished:false
       }
       this.task.subtasks[this.subtaskCount] = subtask;
+      Event.target.value ="";
     }
   }
 
     addAdditionalNotes(Event) {
       if(Event.keyCode === 13) {
         this.task.additionalnote = Event.target.value
+        Event.target.value ="";
       }
     }
 
     changeTaskName(Event) {
       if(Event.keyCode === 13) {
         this.task.name = Event.target.value
+        Event.target.value ="";
       }
+    }
+
+    changeSubtaskCheckboxStatus(subtask) {
+      subtask.isFinished = !subtask.isFinished;
+      this.task.subtasks[subtask.id] = subtask;
+      console.log(this.task.subtasks[subtask.id])
     }
 }

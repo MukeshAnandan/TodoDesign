@@ -1,16 +1,22 @@
 <div id="mysubbar" class = "details sidepanel">
     <div class ="subNotes1"> 
     <div class ="round">
-          <p><input id="checkbox" type="checkbox"/> 
+          <p><input id="checkbox" type="checkbox" [checked] =  "task?.isFinished"/> 
           <label for="checkbox"></label> 
-          <input class = "taskAttributes addList" id ="subTitle" value = {{task.name}} 
-          (keyup)='changeTaskName($event)'/>
+          <input class = "taskAttributes addList" 
+          [ngClass] = "task?.isFinished ? 'lineThrough' : 'taskAttributes addList'" 
+           id ="subTitle" value = {{task?.name}} 
+          (keyup)='changeTaskName($event)' />
           </p>
     </div>   
       <div class = "sidecontent">
                 <div id ="subNotes" class ="subnotes"> 
-                    <div *ngFor = "let subtask of task.subtasks">
-                    <input type = "checkbox" id = "checkboxinput"/> <span> {{subtask.name}} </span>
+                    <div *ngFor = "let subtask of task?.subtasks">
+                    <input type = "checkbox" id = "checkboxinput" [checked] =  "subtask?.isFinished"
+                    [checked] =  "task?.isFinished"
+                    
+                    (change)="changeSubtaskCheckboxStatus(subtask)"/> 
+                    <span [ngClass] = "subtask?.isFinished ? 'lineThrough' : 'disableLineThrough'" > {{subtask?.name}} </span>
                     </div>
                 </div>
                 <div class="newNotes">
@@ -43,7 +49,7 @@
     
     <div class = "sidecontent newlist subNotes5">
     <input  id = "additional" class="addSubNotes" type="text" placeholder= "Add Notes"
-    (keyup)='addAdditionalNotes($event)' value = {{task.additionalnote}} /> 
+    (keyup)='addAdditionalNotes($event)' value = {{task?.additionalnote}} /> 
     </div>
     
     

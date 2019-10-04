@@ -19,6 +19,7 @@ export class Sidebar {
       }
       this.lists[this.listCount] = list;
       this.listCount++;
+      Event.target.value ="";
     }
   }
   currentList;

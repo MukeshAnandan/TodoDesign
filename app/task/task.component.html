@@ -1,10 +1,11 @@
 <div>
     <div id="info"  class="info">
-        <input class="tasktitle" value = {{list.name}} (keyup)='changeListName($event)'/>
+        <input class="tasktitle"  [(ngModel)] = "list.name" value = {{list?.name}} (keyup)='changeListName($event)'/>
     </div>
-    <div id ="newTaskDef" class ="newtaskDetail" > 
-        <div class = "newtask" *ngFor = "let task of list.tasks" (click) = 'getTask(task)'>
-        <input type = "checkbox" id = "checkboxinput"/> <span> {{task.name}} </span>
+    <div id ="newTaskDef" class ="newtaskDetail" *ngFor = "let task of list?.tasks" > 
+        <div class = "newtask" [ngClass] = "task?.isFinished ? 'lineThrough' : 'newtask'" 
+          (click) = 'getTask(task)'>
+        <input  type = "checkbox" id = "checkboxinput" [checked] =  "task?.isFinished" (change)="changeCheckboxStatus(task)"/> <span> {{task.name}} </span>
         </div>
     </div>
 

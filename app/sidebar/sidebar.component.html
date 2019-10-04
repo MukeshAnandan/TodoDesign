@@ -19,7 +19,8 @@
     <div id ="taskList" class ="addlists"  >
         <div class ="taskPointer"  *ngFor = "let list of lists" (click) = 'getTitle(list)'>
             <i class="iconsize listicon"></i>
-            <span> {{list.name}} </span>
+            <input class = "addList" [(ngModel)] = "list.name"  type = "text" value = "{{list?.name}}" />
+                 
         </div>
         
     </div>

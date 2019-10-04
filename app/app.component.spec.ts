@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { Sidebar} from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { TaskComponent } from './task/task.component';
+import { SubtaskComponent } from './subtask/subtask.component';
+
 
 describe('AppComponent', () => {111
   beforeEach(async(() => {
@@ -14,7 +16,10 @@ describe('AppComponent', () => {111
       declarations: [
         AppComponent,
         Sidebar,
-        HeaderComponent
+        HeaderComponent,
+        TaskComponent,
+        SubtaskComponent,
+       
       ],
     }).compileComponents();
   }));

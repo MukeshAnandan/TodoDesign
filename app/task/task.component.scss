@@ -95,7 +95,7 @@ a {
 
 .tasktitle {
     font-size: 1.5rem;
-    margin: 3% 0 0 20%;
+    margin: 3% 0 0 22%;
     color: #1579CE;
     font-family: sans-serif;
     border: none;
@@ -105,7 +105,7 @@ a {
 .newtaskDetail {
    margin-left: 20%;
 }
-.newtask {
+.newtask, .lineThrough {
     color: #1579CE;
     margin: 1% 0 0 2%;
     display: flex;
@@ -220,3 +220,7 @@ input[type=checkbox]:checked {
   color:red;
   text-decoration: line-through;
 } 
+
+.lineThrough {
+    text-decoration: line-through;
+}
