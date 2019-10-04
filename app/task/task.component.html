@@ -1,13 +1,22 @@
-<div id="info"  class="info"><span class="tasktitle">Tasks..</span></div>
-<div id ="newTaskDef" class ="newtaskDetail" > 
-    <div *ngFor = "let task of list.tasks">
-    <input type = "checkbox" id = "checkboxinput"/> <span> {{task.name}} </span>
+<div>
+    <div id="info"  class="info">
+        <input class="tasktitle" value = {{list.name}} (keyup)='changeListName($event)'/>
+    </div>
+    <div id ="newTaskDef" class ="newtaskDetail" > 
+        <div class = "newtask" *ngFor = "let task of list.tasks" (click) = 'getTask(task)'>
+        <input type = "checkbox" id = "checkboxinput"/> <span> {{task.name}} </span>
+        </div>
+    </div>
+
+    <div class="newtask">
+        <span class ="plus"></span>
+        <input id="add-new-task" class="addtask" type="text" 
+            placeholder="Add task" (keyup)='addTask($event)' />   
     </div>
 </div>
 
-<div class="newtask">
-    <span class ="plus"></span>
-    <input id="add-new-task" class="addtask" type="text" 
-        placeholder="Add task" (keyup)='addTask($event)' />   
+
+<div>
+<subtask [task]="currentTask"></subtask>
 </div>
                       

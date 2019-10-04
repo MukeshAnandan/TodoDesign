@@ -1,0 +1,53 @@
+<div id="mysubbar" class = "details sidepanel">
+    <div class ="subNotes1"> 
+    <div class ="round">
+          <p><input id="checkbox" type="checkbox"/> 
+          <label for="checkbox"></label> 
+          <input class = "taskAttributes addList" id ="subTitle" value = {{task.name}} 
+          (keyup)='changeTaskName($event)'/>
+          </p>
+    </div>   
+      <div class = "sidecontent">
+                <div id ="subNotes" class ="subnotes"> 
+                    <div *ngFor = "let subtask of task.subtasks">
+                    <input type = "checkbox" id = "checkboxinput"/> <span> {{subtask.name}} </span>
+                    </div>
+                </div>
+                <div class="newNotes">
+                <span class ="plus"></span>
+                <input id="addSubNotes" class="addsubnotes" type="text" 
+                 placeholder="Next step"  (keyup)='addSubTask($event)'/>   
+                </div>
+        </div>
+    </div>    
+    
+    <div class = "sidecontent subNotes2" >
+    <a href="#"><i class = "iconsize sun"></i> &nbsp;Add To My Day</a>
+    </div>
+    
+    <div class ="subNotes3">
+        <div class = "sidecontent">
+        <a href="#"><i class = "iconsize alarm"></i>&nbsp; Remaind me</a>
+        </div>
+        <div class = "sidecontent">
+        <a href="#"><i class = "iconsize calender"></i>&nbsp;Add due date</a>
+        </div>
+        <div class = "sidecontent">
+        <a href="#"><i class = "iconsize repeat"></i>&nbsp;Repeat</a>
+        </div>
+    </div>
+    
+    <div class = "sidecontent subNotes4">
+    <a href="#"><i class = "iconsize addFile"></i>&nbsp;Add file</a>
+    </div>
+    
+    <div class = "sidecontent newlist subNotes5">
+    <input  id = "additional" class="addSubNotes" type="text" placeholder= "Add Notes"
+    (keyup)='addAdditionalNotes($event)' value = {{task.additionalnote}} /> 
+    </div>
+    
+    
+    <div class = "sidecontent subNotes6"  >
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    </div>
+</div>  
