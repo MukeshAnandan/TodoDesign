@@ -15,10 +15,12 @@ export class Sidebar {
         id:this.listCount,
         name:Event.target.value,
         tasks:[],
+        taskCount:0,
         isFinished:false
       }
       this.lists[this.listCount] = list;
       this.listCount++;
+      this.currentList = list;
       Event.target.value ="";
     }
   }

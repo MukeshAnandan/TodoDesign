@@ -2,7 +2,7 @@
     <div class = "sidecontent" >
     <a href="#"><i class = "iconsize sun"></i> &nbsp;My Day</a>
     </div>
-    <div class = "sideconten">
+    <div class = "sidecontent">
     <a href="#"><i class = "iconsize star"></i>&nbsp; Important</a>
     </div>
     <div class = "sidecontent">
@@ -20,7 +20,7 @@
         <div class ="taskPointer"  *ngFor = "let list of lists" (click) = 'getTitle(list)'>
             <i class="iconsize listicon"></i>
             <input class = "addList" [(ngModel)] = "list.name"  type = "text" value = "{{list?.name}}" />
-                 
+            {{list.taskCount}}
         </div>
         
     </div>

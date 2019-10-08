@@ -1,4 +1,4 @@
-<div>
+<div class="task_design">
     <div id="info"  class="info">
         <input class="tasktitle"  [(ngModel)] = "list.name" value = {{list?.name}} (keyup)='changeListName($event)'/>
     </div>
@@ -6,6 +6,7 @@
         <div class = "newtask" [ngClass] = "task?.isFinished ? 'lineThrough' : 'newtask'" 
           (click) = 'getTask(task)'>
         <input  type = "checkbox" id = "checkboxinput" [checked] =  "task?.isFinished" (change)="changeCheckboxStatus(task)"/> <span> {{task.name}} </span>
+        <p>{{task.completedSubtaskcount}} of {{task.subtaskcount}}</p>
         </div>
     </div>
 
@@ -17,7 +18,7 @@
 </div>
 
 
-<div>
+<div class = "subtask_design">
 <subtask [task]="currentTask"></subtask>
 </div>
                       

@@ -12,6 +12,9 @@ body {
     display: flex;
     flex-direction: column;
 }
+.task_design{
+    overflow: scroll;
+}
 
 .sidepanel  {
     font-family:segoe-regular;

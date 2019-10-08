@@ -1,7 +1,7 @@
 <div id="mysubbar" class = "details sidepanel">
     <div class ="subNotes1"> 
     <div class ="round">
-          <p><input id="checkbox" type="checkbox" [checked] =  "task?.isFinished"/> 
+          <p><input id="checkbox" type="checkbox" [checked] =  "task?.isFinished" (change)="changeCheckboxStatus(task)"/> 
           <label for="checkbox"></label> 
           <input class = "taskAttributes addList" 
           [ngClass] = "task?.isFinished ? 'lineThrough' : 'taskAttributes addList'" 
@@ -12,11 +12,11 @@
       <div class = "sidecontent">
                 <div id ="subNotes" class ="subnotes"> 
                     <div *ngFor = "let subtask of task?.subtasks">
-                    <input type = "checkbox" id = "checkboxinput" [checked] =  "subtask?.isFinished"
+                    <input type = "checkbox" id = "checkboxinput" [checked] = "subtask?.isFinished"
                     [checked] =  "task?.isFinished"
                     
                     (change)="changeSubtaskCheckboxStatus(subtask)"/> 
-                    <span [ngClass] = "subtask?.isFinished ? 'lineThrough' : 'disableLineThrough'" > {{subtask?.name}} </span>
+                    <span [ngClass] = "subtask?.isFinished ? 'linethrough' : 'disableLinethrough'" > {{subtask?.name}} </span>
                     </div>
                 </div>
                 <div class="newNotes">

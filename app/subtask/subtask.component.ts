@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SubtaskComponent {
 
   @Input() task;
+  @Input() list;
     subtaskCount:number = 0;
     addSubTask(Event) {
       this.subtaskCount = this.task.subtasks.length;
@@ -18,6 +19,7 @@ export class SubtaskComponent {
         isFinished:false
       }
       this.task.subtasks[this.subtaskCount] = subtask;
+      this.task.subtaskcount = this.getSubTaskCount();
       Event.target.value ="";
     }
   }
@@ -39,6 +41,21 @@ export class SubtaskComponent {
     changeSubtaskCheckboxStatus(subtask) {
       subtask.isFinished = !subtask.isFinished;
       this.task.subtasks[subtask.id] = subtask;
+      this.task.completedSubtaskcount = this.getCompletedSubTaskCount();
       console.log(this.task.subtasks[subtask.id])
     }
+
+    changeCheckboxStatus(task) {
+      task.isFinished = !task.isFinished;
+      this.list.tasks[task.id] = task;
+      console.log(this.list.tasks[task.id])
+    }
+
+    getSubTaskCount():number {
+      return this.task.subtasks.length
+    }
+    getCompletedSubTaskCount():number {
+      return this.task.subtasks.filter(subtask=> subtask.isFinished === true).length
+    }
 }
+
