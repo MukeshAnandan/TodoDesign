@@ -16,7 +16,6 @@
   text-decoration: none;
   font-size: 16px;
   color: #393737;
-  display: block;
 }
 
 .sidepanel a:hover {
@@ -80,7 +79,7 @@ a {
     opacity: 0.6;
     filter: alpha(opacity=60);
     width: 96%;
-    height: 15%;
+    height: 5rem;
     margin-left: 1%;
     border: none;
     outline: none;
@@ -107,19 +106,32 @@ td {
   width : 100%;
 }
 
-.details {
-    height: 100%;
-    width: 325px;
-    position: fixed;
+.details,.closeDetails {
+    height: 38rem;
+    width: 300px;
+    position: relative;
     padding: 0 0 10px;
     padding-top: 0px;
-    z-index: 1;
-    top: 53px;
-    left: 75%;
+    display: none;
+    top: 0px;
+    left: 10px;
     background-color: #f4f4f4;
     padding-top: 20px;
-    overflow: scroll;
+    overflow: auto;
 }
+.closeDetails {
+    display: block;
+}
+.details a {
+    padding: 6px 8px 1px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #393737;
+  }
+  
+  .details a:hover {
+    color: #0E7BD8;
+  }
 
 .sun {
     content:url("../../assets/icons/sun.png");
@@ -144,6 +156,13 @@ td {
 }
 .addFile {
     content:url("../../assets/icons/fileattach.png");
+}
+.delete {
+    content:url("../../assets/icons/delete.png");
+    margin-left: 80%;
+}
+.exit {
+    content:url("../../assets/icons/sign-out.png");
 }
 .iconsize {
     width:6%;
@@ -286,6 +305,7 @@ td {
     padding: 0%;
     padding-left: 1%;
     width: 85%;
+    margin-top: 25%;
 }
 
 
@@ -351,6 +371,7 @@ body {
     width: 100%;
     padding: 1%;
     font-size: 1rem;
+    margin: 11px;
     margin: 0 0 0 1%;
     border: none;
     outline: none;

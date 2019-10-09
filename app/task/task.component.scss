@@ -12,7 +12,9 @@
   font-size: 28px; /* Increased text to enable scrolling */
   padding: 0px 10px;
 }
-
+.container {
+    display: flex;
+}
 a {
     font-size: 20px; 
 }
@@ -22,23 +24,6 @@ a {
 }
 .newlist {
    margin-top: 0%;
-}
-
-.details {
-    height: 100%;
-    width: 325px;
-    position: fixed;
-    padding: 0 0 10px;
-    padding-top: 0px;
-    z-index: 1;
-    top: 45px;
-    left: 75%;
-    background-color: #f4f4f4;
-    padding-top: 20px;
-    overflow: scroll;
-}
-.task_design{
-    overflow:scroll;
 }
 .sun {
     content:url("../../assets/icons/sun.png");
@@ -79,7 +64,6 @@ a {
 }
 .plus {
     content:url("../../assets/icons/plus.png");
-    margin-left: 20%;
 }
 .noteicon {
     content:url("../../assets/icons/note.png");
@@ -94,10 +78,16 @@ a {
 .todolist {
     width: 100%;
 }
+.tasklength{
+    width: 70%;
+    height: 36rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 
 .tasktitle {
     font-size: 1.5rem;
-    margin: 3% 0 0 22%;
+    margin: 0% 0 0 2%;
     color: #1579CE;
     font-family: sans-serif;
     border: none;
@@ -105,7 +95,7 @@ a {
     background: transparent;
 }
 .newtaskDetail {
-   margin-left: 20%;
+   margin-left: 0%;
 }
 .newtask, .lineThrough {
     margin: 1% 0 0 2%;
@@ -224,4 +214,19 @@ input[type=checkbox]:checked {
 
 .lineThrough {
     text-decoration: line-through;
+}
+
+.star {
+    visibility:hidden;
+    font-size:30px;
+    cursor:pointer;
+}
+.star:before {
+   content: "\2605";
+   position: absolute;
+   visibility:visible;
+}
+.star:checked:before {
+   content: "\2606";
+   position: absolute;
 }

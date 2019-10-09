@@ -1,4 +1,4 @@
-<div id="mysubbar" class = "details sidepanel">
+<div id="mysubbar" class = "details" [ngClass] = "task.sideInfo ? 'closeDetails ' : 'details '" >
     <div class ="subNotes1"> 
     <div class ="round">
           <p><input id="checkbox" type="checkbox" [checked] =  "task?.isFinished" (change)="changeCheckboxStatus(task)"/> 
@@ -54,6 +54,7 @@
     
     
     <div class = "sidecontent subNotes6"  >
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+       <i (click) = 'closeSidepanel()' class = "iconsize exit"></i>
+      <span> <i class = "iconsize delete"></i></span>
     </div>
 </div>  

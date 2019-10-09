@@ -6,7 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./subtask.component.scss']
 })
 export class SubtaskComponent {
-
   @Input() task;
   @Input() list;
     subtaskCount:number = 0;
@@ -93,6 +92,11 @@ export class SubtaskComponent {
      */
     getCompletedSubTaskCount():number {
       return this.task.subtasks.filter(subtask=> subtask.isFinished === true).length
+    }
+  
+    closeSidepanel() {
+      this.task.sideInfo = false;
+      console.log(this.task);
     }
 }
 

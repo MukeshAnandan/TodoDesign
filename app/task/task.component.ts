@@ -24,6 +24,7 @@ export class TaskComponent {
         additionalnote:"",
         subtaskcount:0,
         completedSubtaskcount:0,
+        sideInfo :false,
         isFinished:false
       }
       this.list.tasks[this.taskCount] = task;
@@ -40,6 +41,7 @@ export class TaskComponent {
    */
   currentTask;
   getTask(task) {
+    task.sideInfo = true;
     this.currentTask = task;
     console.log(this.currentTask)
   }

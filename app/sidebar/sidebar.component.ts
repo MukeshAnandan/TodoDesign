@@ -10,7 +10,7 @@ export class Sidebar {
   listCount:number = 0;
     lists: Object[] = [];
     /**
-      *It is used to add the new list and its attributes 
+      * It is used to add the new list and its attributes 
       * 
       * @param {Event} e  - used to call the function which is used to 
       * add the new list while kekup.
@@ -31,7 +31,7 @@ export class Sidebar {
       Event.target.value ="";
     }
   }
-  
+
   /**
    * It is used to assign the selected list to current list
    * 

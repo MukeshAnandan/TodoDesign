@@ -15,6 +15,9 @@ body {
 .task_design{
     overflow: scroll;
 }
+.container {
+    display: flex;
+}
 
 .sidepanel  {
     font-family:segoe-regular;
@@ -50,24 +53,25 @@ body {
 
 
 .sidenav {
-    font-family:segoe-regular;
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    padding:0 0 10px;
-    z-index: 1;
-    top: 53px;
-    left: 0;
+    font-family: segoe-regular;
+    height: 36rem;
+    width: 20rem;
+    position: relative;
+    padding: 0 0 23px;
+    /* z-index: 1; */
+    /* top: 0px; */
+    /* left: 0; */
     background-color: #f4f4f4;
     overflow-x: hidden;
     padding-top: 20px;
 }
 
+
 .sidenavicons{
     font-family:segoe-regular;
     height: 100%;
     width: 250px;
-    position: fixed;
+    position: relative;
     padding:0 0 10px;
     z-index: 1;
     top: 45px;
@@ -163,20 +167,6 @@ a {
 }
 td {
   width : 100%;
-}
-
-.details {
-    height: 100%;
-    width: 325px;
-    position: fixed;
-    padding: 0 0 10px;
-    padding-top: 0px;
-    z-index: 1;
-    top: 45px;
-    left: 75%;
-    background-color: #f4f4f4;
-    padding-top: 20px;
-    overflow: scroll;
 }
 
 .sun {
@@ -279,7 +269,7 @@ td {
 .addlists {
     margin-top: 4%;
     height: 30%;
-    overflow: scroll; 
+    overflow: auto; 
     
 }
 .taskAttributes {
