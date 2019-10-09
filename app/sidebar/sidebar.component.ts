@@ -9,8 +9,15 @@ export class Sidebar {
 
   listCount:number = 0;
     lists: Object[] = [];
+    /**
+      *It is used to add the new list and its attributes 
+      * 
+      * @param {Event} e  - used to call the function which is used to 
+      * add the new list while kekup.
+      */
     addList(Event) {
       if(Event.keyCode === 13) {
+      
       var list = {
         id:this.listCount,
         name:Event.target.value,
@@ -24,6 +31,12 @@ export class Sidebar {
       Event.target.value ="";
     }
   }
+  
+  /**
+   * It is used to assign the selected list to current list
+   * 
+   * @param list - selected list
+   */
   currentList;
   getTitle(list) {
     this.currentList = list;
