@@ -7,7 +7,9 @@ import { Component, OnInit,Input} from '@angular/core';
 })
 export class TaskComponent {
    @Input() list;
+   @Input() impList;
     taskCount:number = 0;
+    currentList;
     /**
       *It is used to add the new task and its attributes 
       * 
@@ -43,6 +45,7 @@ export class TaskComponent {
   getTask(task) {
     task.sideInfo = true;
     this.currentTask = task;
+    this.currentList = this.list;
     console.log(this.currentTask)
   }
   
@@ -65,8 +68,15 @@ export class TaskComponent {
    */
   changeCheckboxStatus(task) {
     task.isFinished = !task.isFinished;
-    this.list.tasks[task.id] = task;
+    //this.list.tasks[task.id] = task;
     console.log(this.list.tasks[task.id])
+  }
+  switchToImportant(task){
+    console.log("important tasks")
+    console.log(task)
+    this.impList.tasks.push(task);
+    console.log("current important tasks")
+    console.log(this.list.tasks)
   }
 
   /**

@@ -6,9 +6,11 @@
     <div id ="newTaskDef" class ="newtaskDetail" *ngFor = "let task of list?.tasks" > 
         <div class = "newtask" [ngClass] = "task?.isFinished ? 'lineThrough' : 'newtask'" 
           (click) = 'getTask(task)'>
-        <input  type = "checkbox" id = "checkboxinput" [checked] =  "task?.isFinished" (change)="changeCheckboxStatus(task)"/> <span> {{task.name}}  </span>
-        <input class="star" type="checkbox" title="bookmark page" checked />
-        <p>{{task.completedSubtaskcount}} of {{task.subtaskcount}}</p>
+        <input  type = "checkbox" id = "checkboxinput" [checked] =  "task?.isFinished" (change)="changeCheckboxStatus(task)"/> <span> {{task.name}} </span>
+        <p>{{task.completedSubtaskcount}} of {{task.subtaskcount}}  
+        <span><input class="imp_check" type = "checkbox" (change)= "switchToImportant(task)"/></span>
+        </p>
+        
         </div>
     </div>
 
@@ -21,7 +23,7 @@
 
 
 <div class = "subtask_design">
-<subtask [task]="currentTask"></subtask>
+<subtask [task]="currentTask" [list] = "currentList"></subtask>
 </div>
 </div>
                       

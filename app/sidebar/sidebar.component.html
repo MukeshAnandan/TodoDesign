@@ -3,7 +3,7 @@
     <div class = "sidecontent" >
     <a href="#"><i class = "iconsize sun"></i> &nbsp;My Day</a>
     </div>
-    <div class = "sidecontent">
+    <div class = "sidecontent" (click) = 'getTitle(ImportantList)'>
     <a href="#"><i class = "iconsize star"></i>&nbsp; Important</a>
     </div>
     <div class = "sidecontent">
@@ -12,13 +12,13 @@
     <div class = "sidecontent">
     <a href="#"><i class = "iconsize person"></i>&nbsp;Assigned to me</a>
     </div>
-    <div class = "sidecontent">
+    <div class = "sidecontent" (click) = 'getTitle(defaultList)'>
     <a href="#"><i class = "iconsize home"></i>&nbsp;Task</a>
     </div>
     
     
     <div id ="taskList" class ="addlists"  >
-        <div class ="taskPointer"  *ngFor = "let list of lists" (click) = 'getTitle(list)'>
+        <div class ="taskPointer"  *ngFor = "let list of lists" (click) = 'getTitle(list)' >
             <i class="iconsize listicon"></i>
             <input class = "addList" [(ngModel)] = "list.name"  type = "text" value = "{{list?.name}}" />
             {{list.taskCount}}
@@ -33,6 +33,6 @@
 </div>  
 
 <div id="todo-list" class="todolist">
-    <task [list]="currentList"></task>
+    <task [list]="currentList" [impList]="ImportantList"></task>
 </div>
 </div>

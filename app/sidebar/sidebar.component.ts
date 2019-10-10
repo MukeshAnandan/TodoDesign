@@ -5,9 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class Sidebar {
+export class Sidebar implements OnInit {
+    ngOnInit() {
+      this.currentList = this.defaultList; 
+    }
 
   listCount:number = 0;
+  currentList;
     lists: Object[] = [];
     /**
       * It is used to add the new list and its attributes 
@@ -32,15 +36,32 @@ export class Sidebar {
     }
   }
 
+  defaultList  = {
+      id:this.listCount,
+      name:"Task",
+      tasks:[],
+      taskCount:0,
+      isFinished:false
+    };
+    
+  ImportantList = {
+    id:this.listCount,
+    name:"ImportantTask",
+    tasks:[],
+    taskCount:0,
+    isFinished:false
+  };  
+      
   /**
    * It is used to assign the selected list to current list
    * 
    * @param list - selected list
    */
-  currentList;
+  
   getTitle(list) {
     this.currentList = list;
     console.log(this.currentList)
   }
+
 
 }
