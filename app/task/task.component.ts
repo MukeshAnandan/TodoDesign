@@ -26,6 +26,7 @@ export class TaskComponent {
         additionalnote:"",
         subtaskcount:0,
         completedSubtaskcount:0,
+        impoTask:false,
         sideInfo :false,
         isFinished:false
       }
@@ -75,6 +76,7 @@ export class TaskComponent {
     console.log("important tasks")
     console.log(task)
     this.impList.tasks.push(task);
+    task.impoTask = !task.impoTask;
     console.log("current important tasks")
     console.log(this.list.tasks)
   }

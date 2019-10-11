@@ -21,7 +21,7 @@
         <div class ="taskPointer"  *ngFor = "let list of lists" (click) = 'getTitle(list)' >
             <i class="iconsize listicon"></i>
             <input class = "addList" [(ngModel)] = "list.name"  type = "text" value = "{{list?.name}}" />
-            {{list.taskCount}}
+            <span *ngIf = "list.taskCount>0" >{{list.taskCount}}</span>
         </div>
         
     </div>

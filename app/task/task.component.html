@@ -7,8 +7,8 @@
         <div class = "newtask" [ngClass] = "task?.isFinished ? 'lineThrough' : 'newtask'" 
           (click) = 'getTask(task)'>
         <input  type = "checkbox" id = "checkboxinput" [checked] =  "task?.isFinished" (change)="changeCheckboxStatus(task)"/> <span> {{task.name}} </span>
-        <p>{{task.completedSubtaskcount}} of {{task.subtaskcount}}  
-        <span><input class="imp_check" type = "checkbox" (change)= "switchToImportant(task)"/></span>
+        <p *ngIf = "task.completedSubtaskcount>0 || task.subtaskcount>0">{{task.completedSubtaskcount}} of {{task.subtaskcount}}  
+        <span><input class="imp_check" type = "checkbox" [checked] =  "task?.impoTask" (change)= "switchToImportant(task)"/></span>
         </p>
         
         </div>
